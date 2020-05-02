@@ -357,8 +357,8 @@ nav{
 
   .postcontainercontent{
     margin: 0vh 0.5rem ;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 0em;
+    padding-right: 0em;
   }
 
   .postcontainercontent #titleimage
