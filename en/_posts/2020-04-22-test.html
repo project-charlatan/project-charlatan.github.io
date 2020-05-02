@@ -1,0 +1,51 @@
+---
+layout: 
+title:  "TEST"
+date:   2020-04-22 06:27:44 +0800
+categories: jekyll update
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="#eng" data-reload>English</a>
+    <a href="#jp" data-reload>Japanese</a>
+
+    <p id="hi">
+      Welcome everyone!
+    </p>
+
+    <script>
+      // define language reload anchors
+      var dataReload = document.querySelectorAll("[data-reload]");
+
+      // Language translations
+      var language = {
+        eng: {
+          welcome: "Weclome everyone!"
+        },
+        jp: {
+          welcome:"こんにちは!"
+        }
+      };
+
+      // Define language via window hash
+      if(window.location.hash){
+        if(window.location.hash === "#jp"){
+          hi.textContent = language.jp.welcome;
+        }
+      }
+
+      // define language reload onclick iteration
+      for(i = 0; i <= dataReload.length; i++)
+      {
+        dataReload[i].onclick = function(){
+          location.reload(true);
+        }
+      };
+    </script>
+  </body>
+</html>

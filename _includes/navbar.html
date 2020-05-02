@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css">
+
+    <script src="https://kit.fontawesome.com/53861324b4.js" crossorigin="anonymous"></script>
+    <title></title>
+  </head>
+  <body>
+    <nav>
+
+      <div class="logo">
+        {% if page.lang == 'en' %}
+          <h4><a href="{{ site.baseurl }} {% link index.html %}" style="color:white; text-decoration: none">Charlatan</a></h4>
+        {% endif %}
+        {% if page.lang == 'ja' %}
+          <h4><a href="{{ site.baseurl }} {% link indexjp.html %}" style="color:white; text-decoration: none">Charlatan</a></h4>
+        {% endif %}
+        {% if page.lang == 'zh' %}
+          <h4><a href="{{ site.baseurl }} {% link indexzh.html %}" style="color:white; text-decoration: none">Charlatan</a></h4>
+        {% endif %}
+
+      </div>
+
+      <ul class="menu">
+        <li>
+          {% if page.lang == 'en' %}
+            <a href="{{ site.baseurl }} {% link en/TrymenT.html %}">TrymenT BreakdowN</a>
+          {% endif %}
+          {% if page.lang == 'ja' %}
+            <a href="{{ site.baseurl }} {% link ja/TrymenT.html %}">TrymenT BreakdowN</a>
+          {% endif %}
+          {% if page.lang == 'zh' %}
+            <a href="{{ site.baseurl }} {% link zh/TrymenT.html %}">TrymenT BreakdowN</a>
+          {% endif %}
+
+        </li>
+        <li>
+          {% if page.lang == 'en' %}
+            <a href="{{ site.baseurl }} {% link en/Otaku.html %}">W.I.P</a>
+          {% endif %}
+          {% if page.lang == 'ja' %}
+            <a href="{{ site.baseurl }} {% link ja/Otaku.html %}">準備中</a>
+          {% endif %}
+          {% if page.lang == 'zh' %}
+            <a href="{{ site.baseurl }} {% link zh/Otaku.html %}">准备中</a>
+          {% endif %}
+
+
+          <!-- Otaku -->
+          <!-- <ul>
+            <li><a>Visual Novel</a></li>
+            <li><a>Anime</a></li>
+            <li><a>Game</a></li>
+          </ul> -->
+        </li>
+        <li>
+          {% if page.lang == 'en' %}
+            <a href="{{ site.baseurl }} {% link en/Journal.html %}">W.I.P</a>
+          {% endif %}
+          {% if page.lang == 'ja' %}
+            <a href="{{ site.baseurl }} {% link ja/Journal.html %}">準備中</a>
+          {% endif %}
+          {% if page.lang == 'zh' %}
+            <a href="{{ site.baseurl }} {% link zh/Journal.html %}">准备中</a>
+          {% endif %}
+          <!-- Journal -->
+          <!-- <ul>
+            <li><a>Blog</a></li>
+            <li><a>Thoughts</a></li>
+            <li><a>Quotes</a></li>
+          </ul> -->
+        </li>
+        <li>
+          {% if page.lang == 'en' %}
+            <a href="{{ site.baseurl }} {% link about.html %}">About</a>
+          {% endif %}
+          {% if page.lang == 'ja' %}
+            <a href="{{ site.baseurl }} {% link aboutjp.html %}">About</a>
+          {% endif %}
+          {% if page.lang == 'zh' %}
+            <a href="{{ site.baseurl }} {% link aboutzh.html %}">About</a>
+          {% endif %}
+        </li>
+      </ul>
+
+      <!-- Language selector -->
+      <button id="modalBtn" class="globe">
+        <i class="fas fa-globe-asia"></i>
+      </button>
+
+      <!-- Modal for language -->
+      <div id="simpleModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="closeBtn">&times;</span>
+            <h3>Language</h3>
+            <hr>
+          </div>
+          <div class="modal-body">
+            <ul>
+              {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+              {% for post in posts %}
+                <li>
+                  <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}
+                  {% if post.lang == 'en' %}
+                    English
+                  {% endif %}
+                  {% if post.lang == 'ja' %}
+                    日本語
+                  {% endif %}
+                  {% if post.lang == 'zh' %}
+                    中文
+                  {% endif %}
+                  </a>
+                </li>
+              {% endfor %}
+
+              {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+              {% for page in pages %}
+                <li>
+                  <a href="{{ page.url }}" class="{{ page.lang }}">
+                    {% if page.lang == 'en' %}
+                      English
+                    {% endif %}
+                    {% if page.lang == 'ja' %}
+                      日本語
+                    {% endif %}
+                    {% if page.lang == 'zh' %}
+                      中文
+                    {% endif %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Burger -->
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+
+    <script src="/assets/app.js"></script>
+    <script src="/assets/modal.js"></script>
+  </body>
+
+</html>

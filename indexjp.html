@@ -1,0 +1,50 @@
+---
+layout: default
+ref: index
+lang: ja
+permalink: /ja
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      div.d1 {
+        background-position: relative;
+        text-align: center;
+        height: 100%;
+        background-color: #050505;
+        color: white;
+        font-size: 50px;
+        padding: 28vh 5em;
+        word-wrap: break-word;
+        text-shadow: 0px 0px 3px red, 0px 0px 300px red;
+      }
+      @media screen and (max-width:768px){
+        div.d1{
+          padding-top: 13vh;
+          padding-left: 0;
+          padding-right: 0;
+          height: auto;
+        }
+        p{
+          width: 90%;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="d1">
+      <p>Και τώρα τι θα γένουμε χωρίς βαρβάρους.</p>
+      <p>Οι άνθρωποι αυτοί ήσαν μια κάποια λύσις.</p>
+      <p style="font-size: 40px; text-align:right; margin-top: 1vh;">– C.P Cavafy </p>
+    </div>
+
+    <div>
+      <a href="{{ site.baseurl }} {% link ja/Journal.html %}"><p style="margin-top: 2vh">Sisyphean</p>
+      <p>The collective existence of beings is the epitome of it.</p></a>
+    </div>
+  </body>
+</html>
