@@ -75,8 +75,11 @@ nav{
 }
 
 @media screen and (max-width:812px){
-  body{
+  html, body{
     overflow-x: hidden;
+  }
+  body{
+    position: relative;
   }
   .menu{
     position: absolute;
@@ -344,8 +347,8 @@ nav{
 @media screen and (max-width:812px){
   .bookmarkcontainer{
     display: none;
-
   }
+
 
   .postcontainer{
     width: 100%;
@@ -354,6 +357,8 @@ nav{
 
   .postcontainercontent{
     margin: 0vh 0.5rem ;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
   .postcontainercontent #titleimage
